@@ -189,15 +189,6 @@ uvicorn main:app --host 0.0.0.0 --port 10000
 
 ---
 
-## 🎯 Future Improvements
-
-* Add confidence/probability score
-* Build Streamlit frontend
-* Add batch prediction support
-* Improve text preprocessing (lemmatization, etc.)
-
----
-
 ## 🤝 Contributing
 
 Feel free to fork the repo and improve it!
