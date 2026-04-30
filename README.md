@@ -206,11 +206,13 @@ Feel free to fork the repo and improve it!
 
 ## 👨‍💻 Author
 
-Anjan Pal
+**Anjan Pal**
 
-🔗 LinkedIn: https://www.linkedin.com/in/anjan-pal-ab5a5a247
-💼 Open to opportunities in Machine Learning / Python Development
+- 🔗 LinkedIn: https://www.linkedin.com/in/anjan-pal-ab5a5a247
+- 💼 Open to opportunities in Machine Learning / Python Development
 
-⭐ If you like this project
+---
+
+## ⭐ If you like this project
 
 Give it a star ⭐ on GitHub!
