@@ -1,11 +1,19 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
+import re
 
 # -----------------------------
 # 1. Load Model
 # -----------------------------
 model = joblib.load("model/model.pkl")
+
+
+# -----------------------------
+# 4. Clean Text
+# -----------------------------
+def clean_text_series(text):
+    return re.sub(r"http\S+", "", text)
 
 # -----------------------------
 # 2. Initialize App
@@ -30,7 +38,7 @@ def home():
 
 @app.post("/predict")
 def predict(data: NewsRequest):
-    text = data.text
+    text = clean_text_series(data.text)
 
     prediction = model.predict([text])[0]
 

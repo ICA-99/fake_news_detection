@@ -35,19 +35,23 @@ def load_data(fake_path, true_path):
 
 
 # -----------------------------
-# 3. Preprocess (NO cleaning here)
+# 3. Preprocess (cleaning here)
 # -----------------------------
 def preprocess(df):
     print("3) Preprocess done...")
+
     df["content"] = df["title"] + " " + df["text"]
+
+    df["content"] = df["content"].apply(clean_text_series)
+
     return df["content"], df["label"]
 
 
 # -----------------------------
 # 4. Clean Text (for Pipeline)
 # -----------------------------
-def clean_text_series(texts):
-    return texts.apply(lambda x: re.sub(r"http\S+", "", x))
+def clean_text_series(text):
+    return re.sub(r"http\S+", "", text)
 
 
 # -----------------------------
@@ -57,7 +61,6 @@ def train_model(X_train, y_train):
     print("4) Model training started...")
 
     model = Pipeline([
-        ("clean", FunctionTransformer(clean_text_series)),
         ("tfidf", TfidfVectorizer(
             max_features=5000,
             stop_words="english",
