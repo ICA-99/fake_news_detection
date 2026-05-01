@@ -1,6 +1,5 @@
 myvenv/
 __pycache__/
 *.pyc
-model/*.pkl
 data/*.csv
 .env
